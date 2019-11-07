@@ -136,6 +136,7 @@ add_executable(md src/md.cpp)
 add_executable(four_omuni src/four_omuni.cpp)
 add_executable(gyro src/gyro.cpp)
 add_executable(md_2 src/md_2.cpp)
+add_executable(led src/led.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -149,6 +150,7 @@ add_dependencies(md ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGET
 add_dependencies(four_omuni ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(gyro ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(md_2 ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(led ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(md
@@ -163,6 +165,10 @@ target_link_libraries(gyro
   ${catkin_LIBRARIES}
 )
 target_link_libraries(md_2
+  pigpiod_if2
+  ${catkin_LIBRARIES}
+)
+target_link_libraries(led
   pigpiod_if2
   ${catkin_LIBRARIES}
 )

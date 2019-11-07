@@ -9,7 +9,7 @@ using std::endl;
 
 constexpr int wheel_0_pin[3] = {17, 27, 22};
 constexpr int wheel_1_pin[3] = {10, 9, 11};
-constexpr int wheel_2_pin[3] = {5, 6, 13};
+constexpr int wheel_2_pin[3] = {26, 13, 19};
 constexpr int wheel_3_pin[3] = {25, 8, 7};
 
 int gpio_handle, pwm_right_front, pwm_left_front, pwm_right_back, pwm_left_back;
