@@ -47,6 +47,10 @@ int main(int argc, char **argv) {
         Vx * cos(M_PI / 4) - Vy * sin(M_PI / 4) + resolutional_speed;
     motor.data[3] =
         Vx * cos(M_PI / 4) + Vy * sin(M_PI / 4) + resolutional_speed;
+    motor.data[0] > 255 ? motor.data[0] = 255 : motor.data[0] = motor.data[0];
+    motor.data[1] > 255 ? motor.data[1] = 255 : motor.data[1] = motor.data[1];
+    motor.data[2] > 255 ? motor.data[2] = 255 : motor.data[2] = motor.data[2];
+    motor.data[3] > 255 ? motor.data[3] = 255 : motor.data[3] = motor.data[3];
     wheel_pub.publish(motor);
     ros::spinOnce();
     loop_rate.sleep();
